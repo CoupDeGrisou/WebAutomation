@@ -1,10 +1,12 @@
-from EzContacts.Src.PageObject.Pages.StartPage import SignIn, NavigationPanel
-from EzContacts.Src.PageObject.Pages.VendorPage import Vendors
+from EzContacts.Src.PageObject.Pages.StartPageAdmin import SignIn, NavigationPanel
 from EzContacts.Src.TestBase.WebDriverUtility import EnvironmentSetup
 from time import sleep
+from EzContacts.Src.PageObject.Pages.ManufacturersPage import Manufacturer
 import unittest
 
-class ezContacts_vendors(EnvironmentSetup):
+
+
+class ezContacts_manufacturer(EnvironmentSetup):
 
     #(threadCount=10)
     def test_create_vendor(self):
@@ -27,13 +29,13 @@ class ezContacts_vendors(EnvironmentSetup):
             print("Exception occurred "+e)
         sleep(3)
 
-        new_vendor = Vendors(driver)
-        new_vendor.setVendorLink()
-        new_vendor.setAddNewVendor()
+        new_Manufacturer = Manufacturer(driver)
+        new_Manufacturer.setManufacturerLink()
+        new_Manufacturer.setAddNewManufacturer()
         sleep(3)  
-        new_vendor.setVendorName()
+        new_Manufacturer.setManufacturerName()
         sleep(3)
-        new_vendor.setSaveNewVendor()
+        new_Manufacturer.setSaveNewManufacturer()
         
         driver.quit()
         
